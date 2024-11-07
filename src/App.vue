@@ -8,12 +8,15 @@
       </div>
     </div>
   </div>
+  
+  <Footer />
 </template>
 
 <script>
 import Sidebar from './components/SidebarApp.vue';
 import Header from './components/HeaderApp.vue';
 import Dashboard from './components/DashChoise.vue';
+import Footer from './components/Footer.vue';
 
 
 export default {
@@ -21,6 +24,7 @@ export default {
     Sidebar,
     Header,
     Dashboard,
+    Footer,
   },
   data() {
     return {

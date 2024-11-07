@@ -3,7 +3,7 @@
   </template>
   
   <script>
-  import Dashboard from './Home/DashboardApp.vue';
+  import Dashboard from './Content/Home/DashboardApp.vue';
   import Courses from './Content/Courses/Courses.vue';
   import Emploi from './Content/Emploi.vue';
   import Absence from './Content/AbsenceJustification.vue';
