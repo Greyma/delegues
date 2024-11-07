@@ -1,26 +1,47 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <div class="layout">
+      <Sidebar @selectComponent="updateSelectedComponent" />
+      <div class="content">
+        <Header />
+        <Dashboard :selectedComponent="selectedComponent" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Sidebar from './components/SidebarApp.vue';
+import Header from './components/HeaderApp.vue';
+import Dashboard from './components/DashChoise.vue';
+
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Sidebar,
+    Header,
+    Dashboard,
+  },
+  data() {
+    return {
+      selectedComponent: 'news', // Composant par défaut
+    };
+  },
+  methods: {
+    updateSelectedComponent(component) {
+      this.selectedComponent = component;
+    },
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+<style scoped>
+.layout {
+  display: flex;
+}
+.content {
+  flex: 1;
+  padding: 1em;
 }
 </style>
